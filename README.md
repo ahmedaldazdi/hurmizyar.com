@@ -9,12 +9,31 @@ for companies in Kurdistan and Europe.
 - **Viatrum** — https://viatrum.eu — logistics and operations platform for wind turbine repair work.
 - **Peyvistan** — https://peyvistan.app — Kurdish-language learning app.
 
+## Files
+
+The site is static with no build step:
+
+- `index.html`, `404.html`, `styles.css`, `favicon.svg`
+- `fonts/` — Inter, self-hosted (SIL Open Font License, `fonts/OFL.txt`), so
+  visitors' browsers never contact Google Fonts
+- `robots.txt`, `sitemap.xml`
+- `vercel.json` — clean URLs, security headers (including a strict
+  Content-Security-Policy: no scripts, no third-party resources) and long caching
+  for the font. Adding an external script, font or image means widening that policy.
+
+The page follows the visitor's light or dark setting.
+
 ## Deploying
 
-The site is a single static page with no build step:
+Hosted on Vercel (team "ahmedaldazdi's projects", project `hurmizyar-com`), linked
+to this repository: every push to `main` deploys to production.
 
-- `index.html`
-- `styles.css`
+The domain's DNS stays at Wix, which also holds the Zoho Mail records (MX, SPF,
+verification TXT). Keep those when changing DNS. The web records are:
 
-Deploy the repository root to any static host (Vercel, Netlify, GitHub Pages)
-and point the `hurmizyar.com` domain at it.
+| Type  | Host  | Value                  |
+| ----- | ----- | ---------------------- |
+| A     | `@`   | `76.76.21.21`          |
+| CNAME | `www` | `cname.vercel-dns.com` |
+
+`www.hurmizyar.com` redirects to `hurmizyar.com` (set in the Vercel project's domains).
