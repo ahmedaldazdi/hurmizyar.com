@@ -31,9 +31,13 @@ to this repository: every push to `main` deploys to production.
 The domain's DNS stays at Wix, which also holds the Zoho Mail records (MX, SPF,
 verification TXT). Keep those when changing DNS. The web records are:
 
-| Type  | Host  | Value                  |
-| ----- | ----- | ---------------------- |
-| A     | `@`   | `76.76.21.21`          |
-| CNAME | `www` | `cname.vercel-dns.com` |
+| Type  | Host  | Value                                  |
+| ----- | ----- | -------------------------------------- |
+| A     | `@`   | `216.150.1.1`                          |
+| A     | `@`   | `216.150.16.1`                         |
+| CNAME | `www` | `05b91171b67666fb.vercel-dns-016.com`  |
+
+These are the values Vercel recommended on 2026-10-08. The older generic values
+(`A 76.76.21.21`, `CNAME cname.vercel-dns.com`) also work.
 
 `www.hurmizyar.com` redirects to `hurmizyar.com` (set in the Vercel project's domains).
